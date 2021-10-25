@@ -1,0 +1,34 @@
+{
+  "contacts": [
+    {
+      "id": "id-1",
+      "name": "Rosie Simpson",
+      "number": "459-12-56"
+    },
+    {
+      "id": "id-2",
+      "name": "Hermione Kline",
+      "number": "443-89-12"
+    },
+    {
+      "id": "id-3",
+      "name": "Eden Clements",
+      "number": "645-17-79"
+    },
+    {
+      "id": "3fff4930-bf74-41cd-88d0-87ef0903c078",
+      "name": "Carmelita Garsuia",
+      "number": "779-76-43"
+    },
+    {
+      "id": "247055d8-4e5e-49c6-8911-ef48381a20fe",
+      "name": "Anatar Cavderar",
+      "number": "345-74-23"
+    },
+    {
+      "id": "edfb7972-3210-47e0-ac48-18854d70865d",
+      "name": "Rosie Simp",
+      "number": "779-76-43"
+    }
+  ]
+}
