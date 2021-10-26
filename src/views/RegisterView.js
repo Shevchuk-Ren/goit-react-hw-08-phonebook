@@ -36,6 +36,7 @@ export default function RegisterView() {
   const handleSubmit = evt => {
     evt.preventDefault();
     dispatch(authOperations.register({ name, email, password }));
+
     setName('');
     setEmail('');
     setPassword('');
@@ -45,43 +46,40 @@ export default function RegisterView() {
     <div>
       <h1> Cтраница регистрации</h1>
 
-      <form
-        onSubmit={handleSubmit}
-        style={styles.form}
-        autoComplete="off"
-      ></form>
-      <label>
-        Имя
-        <input type="text" name="name" value={name} onChange={handleChange} />
-      </label>
-      <label style={styles.label}>
-        Почта
-        <input
-          type="email"
-          name="email"
-          value={email}
-          onChange={handleChange}
-        />
-      </label>
+      <form onSubmit={handleSubmit} style={styles.form} autoComplete="off">
+        <label>
+          Имя
+          <input type="text" name="name" value={name} onChange={handleChange} />
+        </label>
+        <label style={styles.label}>
+          Почта
+          <input
+            type="email"
+            name="email"
+            value={email}
+            onChange={handleChange}
+          />
+        </label>
 
-      <label style={styles.label}>
-        Пароль
-        <input
-          type="password"
-          name="password"
-          value={password}
-          onChange={handleChange}
-        />
-      </label>
+        <label style={styles.label}>
+          Пароль
+          <input
+            type="password"
+            name="password"
+            value={password}
+            onChange={handleChange}
+          />
+        </label>
 
-      <button type="submit">Зарегистрироваться</button>
+        <button type="submit">Зарегистрироваться</button>
+      </form>
     </div>
   );
 }
 
-const mapDispatchToProps = {
-  onRegister: authOperations.register,
-};
+// const mapDispatchToProps = {
+//   onRegister: authOperations.register,
+// };
 
 // class RegisterView extends Component {
 //   state = {

@@ -4,6 +4,9 @@ import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
 
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
+console.log(axios.defaults.baseURL, `url`);
+console.log(axios.defaults, `url`);
+console.log(axios.defaults.baseURL, `url`);
 
 const token = {
   set(token) {
@@ -16,17 +19,29 @@ const token = {
 
 const register = createAsyncThunk('auth/register', async credentials => {
   try {
-    const { data } = await axios.post(`/users/signup`, credentials);
+    const { data } = await axios.post(
+      'https://connections-api.herokuapp.com/users/signup',
+      credentials,
+    );
+    console.log(data, `data`);
     token.set(data.token);
     return data;
   } catch (error) {
     // dispatch(fetchPhonebookError(error))
+    console.log(error);
   }
 });
 
 const logIn = createAsyncThunk('auth/login', async credentials => {
+  console.log(credentials, `crenditials`);
+  console.log(axios.defaults, `url`);
+
   try {
-    const { data } = await axios.post(`/users/login`, credentials);
+    const { data } = await axios.post(
+      `https://connections-api.herokuapp.com/users/login`,
+      credentials,
+    );
+    console.log(data, `data`);
     token.set(data.token);
     token.unset();
     return data;
@@ -37,7 +52,9 @@ const logIn = createAsyncThunk('auth/login', async credentials => {
 
 const logOut = createAsyncThunk('/auth/logout', async () => {
   try {
-    const { data } = await axios.post(`/users/logout`);
+    const { data } = await axios.post(
+      `https://connections-api.herokuapp.com/users/logout`,
+    );
     return data;
   } catch (error) {
     // dispatch(fetchPhonebookError(error))

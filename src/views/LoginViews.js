@@ -5,11 +5,20 @@ import authOperations from '../redux/auth/auth-operations';
 const styles = {
   form: {
     width: 320,
+    border: '1px solid rgb(61, 57, 57)',
+
+    padding: '10px',
+    backgroundColor: 'rgba(84, 81, 81, 0.353)',
   },
   label: {
     display: 'flex',
     flexDirection: 'column',
     marginBottom: 15,
+
+    color: 'rgb(241, 239, 235)',
+  },
+  title: {
+    color: 'rgb(61, 57, 57)',
   },
 };
 
@@ -39,7 +48,7 @@ export default function LoginView() {
 
   return (
     <div>
-      <h1>Страница логина</h1>
+      <h1 style={styles.title}>Вход</h1>
 
       <form onSubmit={handleSubmit} style={styles.form} autoComplete="off">
         <label style={styles.label}>
