@@ -40,15 +40,11 @@ const contacts = createReducer(initialStateContacts, {
   [deletePhonebookSuccess]: (state, { payload }) =>
     state.filter(({ id }) => id !== payload),
 });
-const auth = createReducer([], {
-  'phonebook/login': (state, action) => action.payload,
-});
 
 export default combineReducers({
   contacts,
   filter: filterReducer,
   loading,
-  auth,
 });
 
 // import { combineReducers } from 'redux';

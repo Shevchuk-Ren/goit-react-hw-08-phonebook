@@ -12,7 +12,7 @@ import {
   fetchPhonebookSuccess,
 } from './phonebook-actions';
 
-axios.defaults.baseURL = 'http://localhost:4040';
+axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
 
 export const fetchContact = () => async dispatch => {
   dispatch(fetchPhonebookRequest());
@@ -48,7 +48,7 @@ export const deleteContact = id => dispatch => {
   dispatch(deletePhonebookRequest());
 
   axios
-    .delete(`contacts/${id}`)
+    .delete(`/contacts/${id}`)
     .then(() => dispatch(deletePhonebookSuccess(id)))
     .catch(error => dispatch(deletePhonebookError(error)));
 };

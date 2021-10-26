@@ -6,10 +6,11 @@ const getLoggedIn = state => {
   console.log(state, `loggedin`);
   return state.auth.isLoggedIn;
 };
-const getIsAuthenticated = state => Boolean(state.auth.token);
+const getIsFetchingCurrent = state => state.auth.isFetchingCurrentUser;
 
 const authSelectors = {
   getUsername,
   getLoggedIn,
+  getIsFetchingCurrent,
 };
 export default authSelectors;

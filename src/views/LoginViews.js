@@ -20,6 +20,10 @@ const styles = {
   title: {
     color: 'rgb(61, 57, 57)',
   },
+  input: {
+    border: '1px solid rgb(241, 239, 235)',
+    borderRadius: '2px',
+  },
 };
 
 export default function LoginView() {
@@ -48,12 +52,13 @@ export default function LoginView() {
 
   return (
     <div>
-      <h1 style={styles.title}>Вход</h1>
+      <h1 style={styles.title}>Log In</h1>
 
       <form onSubmit={handleSubmit} style={styles.form} autoComplete="off">
         <label style={styles.label}>
-          Почта
+          Email
           <input
+            style={styles.input}
             type="email"
             name="email"
             value={email}
@@ -62,7 +67,7 @@ export default function LoginView() {
         </label>
 
         <label style={styles.label}>
-          Пароль
+          Password
           <input
             type="password"
             name="password"
