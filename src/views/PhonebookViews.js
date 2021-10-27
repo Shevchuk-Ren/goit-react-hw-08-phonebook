@@ -8,39 +8,65 @@ import { connect, useDispatch } from 'react-redux';
 import { fetchContact } from '../redux/phoneBook/phonebook-operations';
 import { getLoading } from '../redux/phoneBook/phonebook-selectors';
 
-class PhonebookViews extends Component {
-  componentDidMount() {
-    this.props.fetchContact();
-  }
+// class PhonebookViews extends Component {
+//   componentDidMount() {
+//     this.props.fetchContact();
+//   }
 
-  render() {
-    return (
-      <Container>
-        <Section title="Phonebook">
-          <Phonebook />
-        </Section>
+//   render() {
+//     return (
+//       <Container>
+//         <Section title="Phonebook">
+//           <Phonebook />
+//         </Section>
 
-        <Section title="Contacts">
-          <Filter />
-          {this.props.isLoadingContacts && (
+//         <Section title="Contacts">
+//           <Filter />
+//           {this.props.isLoadingContacts && (
+//             <h3 className="loading">Loading...</h3>
+//           )}
+//           <ContactList />
+//         </Section>
+//       </Container>
+//     );
+//   }
+// }
+
+// const mapStateToProps = state => ({
+//   isLoadingContacts: getLoading(state),
+// });
+
+// const mapDispatchToProps = dispatch => ({
+//   fetchContact: () => dispatch(fetchContact()),
+// });
+// // const mapDispatchToProps = {
+// //   fetchTodos: fetchContact,
+// // };
+
+// export default connect(mapStateToProps, mapDispatchToProps)(PhonebookViews);
+
+export default function PhonebookViews() {
+  const dispatch = useDispatch();
+
+  useEffect(() => dispatch(fetchContact()), [dispatch]);
+
+  return (
+    <Container>
+      <Section title="Phonebook">
+        <Phonebook />
+      </Section>
+
+      <Section title="Contacts">
+        <Filter />
+        {/* {this.props.isLoadingContacts && (
             <h3 className="loading">Loading...</h3>
-          )}
-          <ContactList />
-        </Section>
-      </Container>
-    );
-  }
+          )} */}
+        <ContactList />
+      </Section>
+    </Container>
+  );
 }
 
-const mapStateToProps = state => ({
-  isLoadingContacts: getLoading(state),
-});
-
-const mapDispatchToProps = dispatch => ({
-  fetchContact: () => dispatch(fetchContact()),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(PhonebookViews);
 // export default function PhonebookViews() {
 //   const dispatch = useDispatch();
 //   useEffect(() => dispatch(fetchContact()), [dispatch])

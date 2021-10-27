@@ -1,7 +1,7 @@
 import { withTheme } from '@emotion/react';
 import React from 'react';
 import { connect, useDispatch, useSelector } from 'react-redux';
-import authOperations from '../../redux/auth/auth-operations';
+import { logOut } from '../../redux/auth/auth-operations';
 import authSelectors from '../../redux/auth/auth-selectors';
 // import defaultAvatar from './default-avatar.png';
 import defaultAvatar from './rock.jpg';
@@ -35,7 +35,7 @@ export default function UserMenu() {
       <span style={styles.name}>
         Welcome, <span style={styles.pap}>{name}</span>
       </span>
-      <button type="button" onClick={() => dispatch(authOperations.logOut())}>
+      <button type="button" onClick={() => dispatch(logOut())}>
         Logout
       </button>
     </div>

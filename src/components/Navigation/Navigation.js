@@ -17,31 +17,31 @@ const styles = {
 };
 
 export default function Navigation() {
-  const isLoggedIn = useSelector(authSelectors.getLoggedIn);
+  const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
   return (
     <nav>
       <NavLink to="/" exact style={styles.link} activeStyle={styles.activeLink}>
         General
       </NavLink>
 
-      {/* {isLoggedIn &&  <NavLink
-      to="/contacts"
-      exact
-      style={styles.link}
-      activeStyle={styles.activeLink}
-    >
-      Phonebook
-    </NavLink>} */}
-      <NavLink
+      {isLoggedIn && (
+        <NavLink
+          to="/contacts"
+          exact
+          style={styles.link}
+          activeStyle={styles.activeLink}
+        >
+          Phonebook
+        </NavLink>
+      )}
+      {/* <NavLink
         to="/contacts"
         exact
         style={styles.link}
         activeStyle={styles.activeLink}
       >
         Phonebook
-      </NavLink>
+      </NavLink> */}
     </nav>
   );
 }
-
-// export default Navigation;

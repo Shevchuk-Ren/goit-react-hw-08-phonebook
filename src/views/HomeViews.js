@@ -19,9 +19,7 @@ const HomeView = () => (
   <div style={styles.container}>
     <h1 style={styles.title}>
       Your first online phonebook{' '}
-      <span role="img" aria-label="Иконка приветствия">
-        💁‍♀️
-      </span>
+      <span role="img" aria-label="Иконка приветствия"></span>
     </h1>
   </div>
 );
