@@ -16,14 +16,3 @@ export const getVisibleFilter = createSelector(
 );
 
 export const getLoading = state => state.phoneBook.loading;
-
-// previous version
-
-// export const getVisibleFilter = state => {
-//     const filter = getFilter(state);
-//     const contacts = getContacts(state)
-//   return  contacts.filter(contact =>
-//     contact.name.toLocaleLowerCase().includes(filter.toLowerCase()),
-//     );
-
-// }

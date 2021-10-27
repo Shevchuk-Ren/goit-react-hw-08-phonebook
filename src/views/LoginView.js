@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 import authOperations from '../redux/auth/auth-operations';
+import { Button, Form, Input, Label, Title } from './LoginView.styled';
 
 const styles = {
   form: {
@@ -39,31 +40,31 @@ export default function LoginView() {
 
   return (
     <div>
-      <h1>Страница логина</h1>
+      <Title>Log In</Title>
 
-      <form onSubmit={handleSubmit} style={styles.form} autoComplete="off">
-        <label style={styles.label}>
-          Почта
-          <input
+      <Form onSubmit={handleSubmit} autoComplete="off">
+        <Label style={styles.label}>
+          Email
+          <Input
             type="email"
             name="email"
             value={email}
             onChange={handleChange}
           />
-        </label>
+        </Label>
 
-        <label style={styles.label}>
-          Пароль
-          <input
+        <Label style={styles.label}>
+          Password
+          <Input
             type="password"
             name="password"
             value={password}
             onChange={handleChange}
           />
-        </label>
+        </Label>
 
-        <button type="submit">Войти</button>
-      </form>
+        <Button type="submit">Sign In</Button>
+      </Form>
     </div>
   );
 }

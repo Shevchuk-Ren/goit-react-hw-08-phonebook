@@ -1,10 +1,7 @@
-import { withTheme } from '@emotion/react';
 import React from 'react';
-import { connect, useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import authOperations from '../../redux/auth/auth-operations';
-// import { logOut } from '../../redux/auth/auth-operations';
 import authSelectors from '../../redux/auth/auth-selectors';
-// import defaultAvatar from './default-avatar.png';
 import defaultAvatar from './rock.jpg';
 
 const styles = {
@@ -42,13 +39,3 @@ export default function UserMenu() {
     </div>
   );
 }
-// const mapStateToProps = state => ({
-//   name: authSelectors.getUsername(state),
-//   avatar: defaultAvatar,
-// });
-
-// const mapDispatchToProps = {
-//   onLogout: authOperations.logOut,
-// };
-
-// export default connect(mapStateToProps, )(UserMenu);

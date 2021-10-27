@@ -23,10 +23,6 @@ export const fetchContact = () => async dispatch => {
   } catch (error) {
     dispatch(fetchPhonebookError(error));
   }
-  // axios
-  //   .get(`/contacts`)
-  //   .then(({ data }) => dispatch(fetchPhonebookSuccess(data)))
-  //   .catch(error => dispatch(fetchPhonebookError(error)))
 };
 
 export const addContact = data => dispatch => {
@@ -49,7 +45,7 @@ export const deleteContact = id => dispatch => {
   dispatch(deletePhonebookRequest());
 
   axios
-    .delete(`/contacts/${id}`)
+    .delete(`/contacts/{id}`)
     .then(() => dispatch(deletePhonebookSuccess(id)))
     .catch(error => dispatch(deletePhonebookError(error)));
 };

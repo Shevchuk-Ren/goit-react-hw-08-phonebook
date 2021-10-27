@@ -33,6 +33,24 @@ const authSlice = createSlice({
       state.token = null;
       state.isLoggedIn = false;
     },
+    [authOperations.refreshCurrentUser.pending](state, action) {
+      console.log(state, `state in slice to refresh`);
+      console.log(action.payload, `payload in slice to refresh`);
+
+      state.isFetchingCurrentUser = true;
+    },
+    [authOperations.refreshCurrentUser.fulfilled](state, action) {
+      console.log(state, `state in slice to refresh`);
+      console.log(action.payload, `payload in slice to refresh`);
+      state.user = { ...action.payload };
+      state.isLoggedIn = true;
+      state.isFetchingCurrentUser = false;
+    },
+    [authOperations.refreshCurrentUser.rejected](state, _) {
+      console.log(state, `state in slice to refresh rejected`);
+
+      state.isFetchingCurrentUser = false;
+    },
   },
 });
 
