@@ -1,0 +1,2 @@
+(this["webpackJsonpgoit-react-hw-03-phonebook"]=this["webpackJsonpgoit-react-hw-03-phonebook"]||[]).push([[5],{87:function(t,e,n){"use strict";n.r(e);n(0);var i=n(1),o={container:{minHeight:"calc(100vh - 50px)",display:"flex",alignItems:"center",justifyContent:"center"},title:{fontWeight:500,fontSize:48,textAlign:"center"}};e.default=function(){return Object(i.jsx)("div",{style:o.container,children:Object(i.jsx)("h1",{style:o.title,children:"Your first online phonebook"})})}}}]);
+//# sourceMappingURL=5.87318b33.chunk.js.map
