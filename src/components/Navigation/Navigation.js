@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import authSelectors from '../../redux/auth/auth-selectors';
+// import authSelectors from '../../redux/auth/auth-selectors';
 
 const styles = {
   link: {
@@ -17,14 +17,14 @@ const styles = {
 };
 
 export default function Navigation() {
-  const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
+  // const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
   return (
     <nav>
       <NavLink to="/" exact style={styles.link} activeStyle={styles.activeLink}>
         General
       </NavLink>
 
-      {isLoggedIn && (
+      {/* {isLoggedIn && (
         <NavLink
           to="/contacts"
           exact
@@ -33,15 +33,15 @@ export default function Navigation() {
         >
           Phonebook
         </NavLink>
-      )}
-      {/* <NavLink
+      )} */}
+      <NavLink
         to="/contacts"
         exact
         style={styles.link}
         activeStyle={styles.activeLink}
       >
         Phonebook
-      </NavLink> */}
+      </NavLink>
     </nav>
   );
 }

@@ -7,8 +7,6 @@ import './index.css';
 import App from './components/App/App';
 import { PersistGate } from 'redux-persist/integration/react';
 
-console.log(store);
-
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>

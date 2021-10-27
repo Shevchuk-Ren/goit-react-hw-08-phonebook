@@ -11,15 +11,16 @@ const styles = {
     fontWeight: 500,
     fontSize: 48,
     textAlign: 'center',
-    color: 'rgb(61, 57, 57)',
   },
 };
 
 const HomeView = () => (
   <div style={styles.container}>
     <h1 style={styles.title}>
-      Your first online phonebook{' '}
-      <span role="img" aria-label="Иконка приветствия"></span>
+      Приветственная страница нашего сервиса{' '}
+      <span role="img" aria-label="Иконка приветствия">
+        💁‍♀️
+      </span>
     </h1>
   </div>
 );

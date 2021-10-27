@@ -20,12 +20,7 @@ export default function AppBar() {
     <header style={styles.header}>
       <Navigation />
       {isLoggedIn ? <UserMenu /> : <AuthNav />}
+      {/* <AuthNav></AuthNav> */}
     </header>
   );
 }
-
-// const mapStateToProps = state => ({
-//   isAuthenticated: authSelectors.getIsAuthenticated(state),
-// });
-
-// export default connect()(AppBar);

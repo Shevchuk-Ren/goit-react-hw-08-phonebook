@@ -41,12 +41,17 @@ const contacts = createReducer(initialStateContacts, {
     state.filter(({ id }) => id !== payload),
 });
 
-export default combineReducers({
+// export default combineReducers({
+//   contacts,
+//   filter: filterReducer,
+//   loading
+// });
+
+export const phoneReducer = combineReducers({
   contacts,
   filter: filterReducer,
   loading,
 });
-
 // import { combineReducers } from 'redux';
 // import phoneBookTypes from './phonebook-types';
 

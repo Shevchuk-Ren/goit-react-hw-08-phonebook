@@ -1,7 +1,6 @@
 import { createSelector } from '@reduxjs/toolkit';
 
 export const getContacts = state => {
-  console.log(state, `STATE11`);
   return state.phoneBook.contacts;
 };
 

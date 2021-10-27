@@ -1,7 +1,8 @@
-import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 
-axios.defaults.baseURL = 'https:/connections-api.herokuapp.com';
+axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
+console.log(axios.defaults, `AXIOS api`);
 
 const token = {
   set(token) {
@@ -12,52 +13,44 @@ const token = {
   },
 };
 
-export const register = createAsyncThunk('auth/register', async credentials => {
+const register = createAsyncThunk('auth/register', async credentials => {
   try {
     const { data } = await axios.post('/users/signup', credentials);
+    console.log(data, `data in register`);
     token.set(data.token);
     return data;
   } catch (error) {
-    //
+    console.log(error, `error register`);
   }
 });
 
-export const logIn = createAsyncThunk('auth/login', async credentials => {
+const logIn = createAsyncThunk('auth/login', async credentials => {
   try {
     const { data } = await axios.post('/users/login', credentials);
+    console.log(data, `data in login`);
+    console.log(axios.defaults, `defaults axios`);
     token.set(data.token);
     return data;
   } catch (error) {
-    //
+    console.log(error, `error in login`);
   }
 });
 
-export const logOut = createAsyncThunk('auth/logout', async () => {
+const logOut = createAsyncThunk('auth/logout', async () => {
   try {
-    await axios.post('/users/logout');
+    const { data } = await axios.post('/users/logout');
+    console.log(`data in logout`);
+    console.log(axios.defaults, `defaults axios logout`);
     token.unset();
   } catch (error) {
-    //
+    console.log(error, `error in logout`);
   }
 });
 
-export const fetchCurrentUser = createAsyncThunk(
-  'auth/refresh',
-  async (_, thunkAPI) => {
-    const state = thunkAPI.getState();
-    const persistedToken = state.auth.token;
+const authOperations = {
+  register,
+  logIn,
+  logOut,
+};
 
-    if (persistedToken === null) {
-      console.log('No token!');
-      return thunkAPI.rejectWithValue();
-    }
-
-    token.set(persistedToken);
-    try {
-      const { data } = await axios.get('/users/current');
-      return data;
-    } catch (error) {
-      //
-    }
-  },
-);
+export default authOperations;

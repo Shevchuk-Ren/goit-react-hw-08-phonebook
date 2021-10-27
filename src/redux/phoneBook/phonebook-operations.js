@@ -12,26 +12,13 @@ import {
   fetchPhonebookSuccess,
 } from './phonebook-actions';
 
-axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
-console.log(axios.defaults, `AXIOS`);
-
-const token = {
-  set(token) {
-    axios.defaults.headers.common.Authorization = `Bearer is ${token}`;
-  },
-  unset() {
-    axios.defaults.headers.common.Authorization = ' ';
-  },
-};
-
 export const fetchContact = () => async dispatch => {
   dispatch(fetchPhonebookRequest());
 
   try {
-    const { data } = await axios.get('/contacts');
-    console.log(data, `ABBBB`);
-    token.set(data.token);
-    console.log(data.token, `AAAAAAAAAAA`);
+    const { data } = await axios.get(`/contacts`);
+    console.log(data, `data in contacts fech`);
+    console.log(axios.defaults, `axios api in fetch`);
     dispatch(fetchPhonebookSuccess(data));
   } catch (error) {
     dispatch(fetchPhonebookError(error));
@@ -41,6 +28,7 @@ export const fetchContact = () => async dispatch => {
   //   .then(({ data }) => dispatch(fetchPhonebookSuccess(data)))
   //   .catch(error => dispatch(fetchPhonebookError(error)))
 };
+
 export const addContact = data => dispatch => {
   const { name, number } = data;
   const contactNew = {
