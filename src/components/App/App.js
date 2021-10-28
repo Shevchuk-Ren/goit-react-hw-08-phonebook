@@ -25,7 +25,7 @@ export default function App() {
     !isFetchingCurrentUser && (
       <Container>
         <AppBar />
-        <Suspense fallback={<p>Загружаем...</p>}>
+        <Suspense fallback={<p className="loading">Загружаем...</p>}>
           <Switch>
             <PublicRoute exact path="/">
               <HomeView />
