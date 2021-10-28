@@ -7,6 +7,7 @@ export const Wrapper = styled.div`
   margin-right: auto;
   border-radius: 6px;
   background-color: rgba(39, 36, 36, 0.392);
+  height: 100vh;
 
   @media screen and (max-width: 767px) {
     width: 320px;
@@ -20,6 +21,5 @@ export const Wrapper = styled.div`
     padding-left: 71px;
     padding-right: 71px;
     width: 1024px;
-    height: 100vh;
   }
 `;
