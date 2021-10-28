@@ -34,4 +34,6 @@ export const Button = styled.button`
   background-color: rgb(68, 68, 154);
   border-radius: 2px;
   color: rgb(241, 239, 235);
+
+  cursor: pointer;
 `;

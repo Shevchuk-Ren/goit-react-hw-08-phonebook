@@ -52,4 +52,8 @@ code {
 }
 .loading {
   color: rgb(68, 68, 154);
+  font-size: x-large;
+}
+button {
+  cursor: pointer;
 }

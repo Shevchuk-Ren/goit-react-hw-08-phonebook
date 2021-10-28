@@ -41,11 +41,11 @@ export const addContact = data => dispatch => {
     .catch(error => dispatch(addPhonebookError(error)));
 };
 
-export const deleteContact = id => dispatch => {
+export const deleteContact = contactId => dispatch => {
   dispatch(deletePhonebookRequest());
 
   axios
-    .delete(`/contacts/{id}`)
-    .then(() => dispatch(deletePhonebookSuccess(id)))
+    .delete(`/contacts/${contactId}`)
+    .then(() => dispatch(deletePhonebookSuccess(contactId)))
     .catch(error => dispatch(deletePhonebookError(error)));
 };
