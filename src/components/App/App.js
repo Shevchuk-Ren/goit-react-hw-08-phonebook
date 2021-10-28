@@ -28,16 +28,12 @@ export default function App() {
         <Suspense fallback={<p>Загружаем...</p>}>
           <Switch>
             <PublicRoute exact path="/">
-              {' '}
               <HomeView />
             </PublicRoute>
             <PublicRoute exact path="/register" restricted redirectTo="/login">
-              {' '}
               <RegisterView />
             </PublicRoute>
-
             <PublicRoute exact path="/login" restricted redirectTo="/contacts">
-              {' '}
               <LoginView />
             </PublicRoute>
 

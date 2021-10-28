@@ -4,7 +4,7 @@ import { Button, Item, List } from './ContactList.styled';
 import { connect } from 'react-redux';
 import { deleteContact } from '../../redux/phoneBook/phonebook-operations';
 import { getVisibleFilter } from '../../redux/phoneBook/phonebook-selectors';
-
+import avatar from './logo.jpg';
 const ContactList = ({ contacts, onDelete }) => (
   <List>
     {contacts.map(({ name, number, id }) => (

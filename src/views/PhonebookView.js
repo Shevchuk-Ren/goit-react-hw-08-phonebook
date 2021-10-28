@@ -1,25 +1,12 @@
 import { useEffect } from 'react';
 import Section from '../components/Section';
 import Phonebook from '../components/Phonebook';
-import ContactList from '../components/ContactList';
+import ContactList from '..//components/ContactList';
 import Filter from '../components/Filter';
-import Container from '../components/Container';
+
 import { useDispatch } from 'react-redux';
 import { fetchContact } from '../redux/phoneBook/phonebook-operations';
-
-const styles = {
-  container: {
-    backgroundColor: 'red',
-    padding: '15px',
-    width: 'fit-content',
-    borderRadius: '6px',
-  },
-  title: {
-    fontWeight: 500,
-    fontSize: 48,
-    textAlign: 'center',
-  },
-};
+import { Wrapper } from './PhonebookView.styled';
 
 export default function PhonebookView() {
   const dispatch = useDispatch();
@@ -27,7 +14,7 @@ export default function PhonebookView() {
   useEffect(() => dispatch(fetchContact()), [dispatch]);
 
   return (
-    <div className={styles.container}>
+    <Wrapper>
       <Section title="Phonebook">
         <Phonebook />
       </Section>
@@ -39,6 +26,6 @@ export default function PhonebookView() {
           )} */}
         <ContactList />
       </Section>
-    </div>
+    </Wrapper>
   );
 }

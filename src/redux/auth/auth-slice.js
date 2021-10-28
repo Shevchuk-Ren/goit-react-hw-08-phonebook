@@ -17,7 +17,7 @@ const authSlice = createSlice({
       console.log(action.payload, `payload in slice to register`);
       state.user = action.payload.user;
       state.token = action.payload.token;
-      state.isLoggedIn = true;
+      state.isLoggedIn = false;
     },
     [authOperations.logIn.fulfilled](state, action) {
       console.log(state, `state in slice to login`);
